@@ -1,10 +1,8 @@
-import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-
-import {is} from 'util'
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Footer as FooterComponent } from './Footer'
 
-export default is<ComponentMeta<typeof FooterComponent>>()({
+export default {
   title: 'Organisms/Footer',
   component: FooterComponent,
   argTypes: {
@@ -14,7 +12,8 @@ export default is<ComponentMeta<typeof FooterComponent>>()({
       },
     },
   },
-})
+} as ComponentMeta<typeof FooterComponent>;
+
 
 const Template: ComponentStory<typeof FooterComponent> = props => <FooterComponent {...props}></FooterComponent>
 

@@ -5,5 +5,7 @@ export interface WalletConnectProps {
     connectLoading?: boolean
     walletAddress: string | undefined
     chain: string
+    res:any
+    provider: string
   }
   

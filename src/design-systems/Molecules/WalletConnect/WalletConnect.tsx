@@ -4,14 +4,9 @@ import { useEffect, useState } from "react";
 import Web3 from "web3";
 import Web3Modal from "web3modal";
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
+import { Button } from "@/design-systems/Atoms";
 
-export const WalletConnect: React.FC<WalletConnectProps> = ({
-  className,
-  wallet = "METAMASK",
-  connectLoading = false,
-  res,
-  provider,
-}) => {
+export const WalletConnect: React.FC<WalletConnectProps> = ({}) => {
   const [walletcredentials, setWalletCredentials] = useState<any>({});
   const handleConnect = async () => {
     const res = await connectWallet();
@@ -135,12 +130,11 @@ export const WalletConnect: React.FC<WalletConnectProps> = ({
   return (
     <div className="flex justify-between gap-4 md:items-center">
       {!walletcredentials?.res?.acc && (
-        <button
+        <Button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
           onClick={handleConnect}
-        >
-          Connect Metamask Wallet
-        </button>
+          label={"Connect Metamask Wallet"}
+        />
       )}
       {walletcredentials?.res?.acc && (
         <div className="max-w-sm rounded overflow-hidden shadow-lg bg-gray-300">
@@ -150,12 +144,11 @@ export const WalletConnect: React.FC<WalletConnectProps> = ({
           <h3> Balance : {walletcredentials?.res?.accountBalance}</h3>
         </div>
       )}
-      <button
+      <Button
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
         onClick={handleConnectKaikas}
-      >
-        Connect Kaikas Wallet
-      </button>
+        label={"Connect Kaikas Wallet"}
+      />
     </div>
   );
 };

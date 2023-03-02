@@ -1,7 +1,7 @@
 import React from "react";
 import { HeaderProps } from "./interface";
 
-export const Header: React.FC<HeaderProps> = ({ className = "", children }) => {
+export const Header: React.FC<HeaderProps> = ({}) => {
   return (
     <div className="bg-gray-700 px-2 py-4 lg:px-8">
       <div className=" items-center justify-between gap-4 md:items-start md:gap-0 ">

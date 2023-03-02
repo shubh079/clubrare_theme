@@ -21,4 +21,4 @@ export default {
 
 const Template: ComponentStory<typeof WalletConnect> = props => <WalletConnect {...props} />
 
-export const WalletConnectIcon = Template.bind({})
+export const WalletConnectButton = Template.bind({})
